@@ -24,7 +24,13 @@ class AmassMotionCfg(MotionBufferCfg):
     path: str = MISSING  # type: ignore
     """ the path to the motion dataset """
 
-    supported_file_endings: Sequence[str] = ["poses.npz", "stageii.npz", "retargetted.npz", "retargeted.npz", "soma.csv"]
+    supported_file_endings: Sequence[str] = [
+        "poses.npz",
+        "stageii.npz",
+        "retargetted.npz",
+        "retargeted.npz",
+        "soma.csv",
+    ]
     """ At initialization stage, AmassMotion will walk through `cfg.path` and collect all files ending with
     `supported_file_endings`
     """

@@ -593,9 +593,7 @@ class AmassMotion(MotionBuffer):
         with open(filepath, encoding="utf-8-sig") as f:
             header = f.readline().strip().split(",")
         if len(header) < 8:
-            raise ValueError(
-                f"Invalid soma CSV format in {filepath}: expected at least 8 columns, got {len(header)}."
-            )
+            raise ValueError(f"Invalid soma CSV format in {filepath}: expected at least 8 columns, got {len(header)}.")
 
         raw_values = np.loadtxt(filepath, delimiter=",", skiprows=1, dtype=np.float32)
         if raw_values.ndim == 1:
@@ -630,9 +628,7 @@ class AmassMotion(MotionBuffer):
                 f"{missing_joints}. File: {filepath}"
             )
 
-        retargetted_joints_to_output_joints_ids = [
-            joint_names_clean.index(j_name) for j_name in self.isaac_joint_names
-        ]
+        retargetted_joints_to_output_joints_ids = [joint_names_clean.index(j_name) for j_name in self.isaac_joint_names]
 
         joint_pos = joint_pos[:, retargetted_joints_to_output_joints_ids]
 

@@ -12,4 +12,4 @@ class AistppMotionCfg(AmassMotionCfg):
 
     class_type: type = AistppMotion
 
-    assumed_file_framerate: float = 60.0 # refer to https://arxiv.org/pdf/2101.08779
+    assumed_file_framerate: float = 60.0  # refer to https://arxiv.org/pdf/2101.08779
